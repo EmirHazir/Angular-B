@@ -1,0 +1,18 @@
+<p>
+  http-module örnek!
+</p>
+<hr>
+<!-- import { HttpModule } from "@angular/http"; appmodule eklemen lazım -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul *ngFor="let item of users">
+          <li>{{item.id}}</li>
+          <li>{{item.name}}</li>
+          <li>{{item.username}}</li>
+          <li>{{item.email}}</li>
+          <li>{{item.address.state}}</li>
+        </ul>
+      </div>
+    </div>

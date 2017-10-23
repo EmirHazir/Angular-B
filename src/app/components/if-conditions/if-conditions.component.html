@@ -1,0 +1,18 @@
+<p>
+  if-conditions!
+</p>
+<hr>
+<!-- kullanım -1 -->
+<h2 *ngIf="name">{{name}}</h2>
+<!-- kullanım -2 -->
+<h2 *ngIf="!name; else templateName"></h2>
+<ng-template #templateName> 
+ <h3>Hasan Hüseyin </h3> 
+</ng-template>
+<!-- kullanım -3 -->
+<h2 >{{!goster ?  name: 'Emir Hazir'}}</h2>
+
+<hr>
+    
+
+

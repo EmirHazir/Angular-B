@@ -1,0 +1,21 @@
+<p>
+  array-objects!
+</p>
+
+<ul>
+  <li *ngFor="let person of persons"> 
+    {{person}}
+  </li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let job of jobs; let i = index">
+    {{i+1}} - {{job}}
+    </li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let pl of progLanguages">
+    {{pl.name}} - {{pl.city}}
+  </li>
+</ul>

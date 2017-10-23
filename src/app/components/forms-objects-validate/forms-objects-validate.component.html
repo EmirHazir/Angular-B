@@ -1,0 +1,57 @@
+<p>
+  forms-objects-validate!
+</p>
+
+<section class="giris">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form novalidate #fo="ngForm" (ngSubmit)="submitForm(fo)" >
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input [(ngModel)]="user.firstname" type="text" class="form-control" id="firstname" name="firstname" #myName="ngModel" required
+              minlength="4">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input [(ngModel)]="user.lastname" type="text" class="form-control" id="lastname" name="lastname" #myLname="ngModel" required
+              minlength="4">
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input [(ngModel)]="user.age" type="number" class="form-control" id="age" name="age" #myAge="ngModel" required minlength="2">
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+
+          <div class="hataMessage">
+            <div *ngIf="myName.errors?.required && myName.touched">
+              Name is required.
+            </div>
+            <div *ngIf="myName.errors?.minlength && myName.touched">
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="myLname.errors?.required && myLname.touched">
+                LastName is required.
+              </div>
+              <div *ngIf="myLname.errors?.minlength && myLname.touched">
+                LastName must be at least 4 characters long.
+              </div>
+              <div *ngIf="myAge.errors?.required && myAge.touched">
+                  Age is required.
+                </div>
+                <div *ngIf="myAge.errors?.minlength && myAge.touched">
+                  Age must be number and max 99.
+                </div>
+          </div>
+          
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h3>{{user.firstname}}</h3>
+        <h3>{{user.lastname}}</h3>
+        <h3 *ngIf="myAge.valid">{{user.age}}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
